@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бесполезный сайт</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f8ff;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+        }
+        button {
+            background-color: #008cba;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #005f73;
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button id="uselessButton">Нажми меня</button>
+        <div class="message" id="message"></div>
+    </div>
+
+    <script>
+        const messages = [
+            "Поздравляю, ты только что потратил 1 секунду своей жизни!",
+            "Ничего не произошло. Отличная работа!",
+            "Ты нажал кнопку, и... всё ещё ничего.",
+            "Интересный факт: кнопки созданы для нажатий.",
+            "Зачем ты это делаешь?",
+            "Это был бесполезный клик. Продолжай в том же духе!"
+        ];
+
+        document.getElementById('uselessButton').addEventListener('click', () => {
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            document.getElementById('message').textContent = randomMessage;
+        });
+    </script>
+</body>
+</html>
